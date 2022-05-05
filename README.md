@@ -1,1 +1,1 @@
-# Labs_1_sem
+# Labs_physics_mipt
