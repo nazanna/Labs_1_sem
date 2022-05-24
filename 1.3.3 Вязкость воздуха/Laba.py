@@ -177,12 +177,11 @@ def make_delta():
     data['d'] *= 10**(-3)
     x = data['l']
     y = data['p']
-    k, b, sigma = make_graffic(x[:3], y[:3], xlabel='x, cм', ylabel='P, Па', caption_point='d=3.95 мм',
-                 xerr=0, yerr=0.01*y[:3], b=0)
-    plt.scatter(x[3], y[3], linewidth=0.08, color='green')
-    k, b, sigma = make_graffic(x[5:], y[5:], xlabel='x, cм', ylabel='P, Па', caption_point='d=5.1 мм',
-                 xerr=0, yerr=0.01*y[5:], b=0, color=['red', 'grey'])
-    plt.scatter(x[4], y[4], linewidth=0.08, color='red')
+    make_point_grafic(x[:4], y[:4], xlabel='x, cм', ylabel='P, Па', caption='d=3.95 мм',
+                 xerr=0, yerr=0.01*y[:4])
+    make_point_grafic(x[4:], y[4:], xlabel='x, cм', ylabel='P, Па', caption='d=5.1 мм',
+                 xerr=0, yerr=0.01*y[4:], color='red')
+    plt.legend()
 
 def make_q():
     data = make_dic('Q=const.csv')
